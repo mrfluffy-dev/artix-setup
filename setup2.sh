@@ -5,7 +5,7 @@ cd /home/"$name" || exit 1
 echo installing paru pacage manager
 git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin || exit 1
-makepkg -si --noconfirm
+makepkg -si 
 cd .. || exit 1
 rm -R paru-bin
 echo installing pacages with paru
@@ -16,6 +16,8 @@ paru -S \
         polybar \
         nerd-fonts-iosevka \
 	noto-fonts-emoji \
+	font-manager \
+	siji \
 git clone https://github.com/ZastianPretorius/config.git
 cd config || exit 1
 for entry in *
