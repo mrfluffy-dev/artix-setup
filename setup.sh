@@ -1,4 +1,4 @@
-!#/bin/sh
+#!/bin/sh
 
 pacman -Suy --noconfirm
 echo Installing all the needed pacages from main artix/arch repo
@@ -44,28 +44,31 @@ pacman -S \
 	neofetch \
 	neovim \
 	--noconfirm \
-echo Pleas provide a username
-read name
-useradd -m $name
-passwd $name
+echo "Pleas profide a username:"
+read -r name
+useradd -m "$name"
+passwd "$name"
 echo adding user to some basic groups
-usermod -a -G wheel $name
-usermod -a -G video $name
-usermod -a -G uucp $name
-mv setup2.sh /home/$user/setup2.sh
-chown $user:$user /home/$user/setup2.sh
-chmod +x /home/$user/setup2.sh
-read -p "pleas uncomment the wheel group to alow the user to use 'sudo':Press Enter to continu"
+usermod -a -G wheel "$name"
+usermod -a -G video "$name"
+usermod -a -G uucp "$name"
+mv setup2.sh /home/"$name"/setup2.sh
+chown "$name":"$name" /home/"$name"/setup2.sh
+chmod +x /home/"$name"/setup2.sh
+printf "pleas uncomment the wheel group to alow the user to use 'sudo':Press Enter to continu"
+read -r
 EDITOR=nvim visudo
-read -p "The system needs to reboot for the user to be added to the groups. \n \
+printf "The system needs to reboot for the user to be added to the groups. \n \
 	after reboot log in as the new user \n \
 	Then run setup2.sh found in your home directory \n \
-	\n "
-read -p "Press y to reboot or leave blanck to exit setup" confirm
+	\n press enter to continu \n "
+read -r
+echo "Press y to reboot or leave blanck to exit setup"
+read -r confirm
 
-if [ $confirm = 'y' ]
+if [ "$confirm" = "y" ]
 then
 	reboot
 else
 	exit 0
-
+fi
