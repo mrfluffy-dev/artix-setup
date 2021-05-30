@@ -8,15 +8,14 @@ pacman -S \
 	lightdm-gtk-greeter \
 	lightdm-gtk-greeter-settings \
 	xmonad \
-	xmonad-contribs \
-	pacman-contribs \
+	xmonad-contrib \
+	pacman-contrib \
 	code \
 	xss-lock \
 	fcitx5 \
 	fcitx5-mozc \
 	fcitx5-qt \
 	fcitx5-gtk \
-	font-manager \
 	adobe-source-han-sans-jp-fonts \
 	arandr \
 	lxappearance \
@@ -40,10 +39,8 @@ pacman -S \
 	rofi \
 	base-devel \
 	noto-fonts-emoji \
-	siji \
 	neofetch \
 	neovim \
-	--noconfirm \
 echo "Pleas profide a username:"
 read -r name
 useradd -m "$name"
