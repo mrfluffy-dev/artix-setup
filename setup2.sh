@@ -17,7 +17,7 @@ paru -S \
         nerd-fonts-iosevka \
 	noto-fonts-emoji \
 	font-manager \
-	siji \
+	siji
 git clone https://github.com/ZastianPretorius/config.git
 cd config || exit 1
 for entry in *
