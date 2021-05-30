@@ -40,7 +40,7 @@ pacman -S \
 	base-devel \
 	noto-fonts-emoji \
 	neofetch \
-	neovim \
+	neovim 
 echo "Pleas profide a username:"
 read -r name
 useradd -m "$name"
