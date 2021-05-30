@@ -5,6 +5,7 @@ echo Installing all the needed pacages from main artix/arch repo
 pacman -S \
 	xorg \
 	lightdm \
+	lightdm-openrc \
 	lightdm-gtk-greeter \
 	lightdm-gtk-greeter-settings \
 	xmonad \

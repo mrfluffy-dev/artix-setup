@@ -7,7 +7,7 @@ git clone https://aur.archlinux.org/paru-bin.git
 cd paru-bin || exit 1
 makepkg -si 
 cd .. || exit 1
-rm -R paru-bin
+rm -R -f paru-bin
 echo installing pacages with paru
 paru
 paru -S \
@@ -24,6 +24,10 @@ for entry in *
 do
 	mv "$entry" /home/"$name"/"$entry"
 done
+for entry in .*
+do
+	mv "$entry" /home/"$name"/"$entry"
+done
 cd || exit 1
 mkdir Pictures
 cd Pictures || exit 1
@@ -31,6 +35,6 @@ git clone https://github.com/ZastianPretorius/wallpapers.git
 printf "sudo password:"
 read -r  pass
 echo "$pass" | sudo rc-update add NetworkManager
-echo "$pass" | suso rc-update add lightdm
+echo "$pass" | sudo rc-update add lightdm
 
 
