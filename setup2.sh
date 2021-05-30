@@ -26,7 +26,13 @@ do
 done
 for entry in .*
 do
-	mv "$entry" /home/"$name"/"$entry"
+	if [ "$entry" = "." ]
+	then
+	elif ["$entry" = ".." ]
+	then
+	else
+		mv "$entry" /home/"$name"/"$entry"
+	fi
 done
 cd || exit 1
 mkdir Pictures
