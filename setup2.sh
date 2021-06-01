@@ -17,7 +17,11 @@ paru -S \
         nerd-fonts-iosevka \
 	noto-fonts-emoji \
 	font-manager \
-	siji
+	siji \
+	brave-bin \
+	flatpak
+flatpak install discord
+flatpak install libreoffice
 git clone https://github.com/ZastianPretorius/config.git
 cd config || exit 1
 for entry in *
@@ -28,19 +32,20 @@ for entry in .*
 do
 	if [ "$entry" = "." ]
 	then
-	elif ["$entry" = ".." ]
+		echo hello
+	elif [ "$entry" = ".." ]
 	then
+		echo hello
 	else
 		mv "$entry" /home/"$name"/"$entry"
 	fi
 done
 cd || exit 1
+xmonad --recompile
 mkdir Pictures
 cd Pictures || exit 1
 git clone https://github.com/ZastianPretorius/wallpapers.git
-printf "sudo password:"
-read -r  pass
-echo "$pass" | sudo rc-update add NetworkManager
-echo "$pass" | sudo rc-update add lightdm
+sudo rc-update add NetworkManager
+sudo rc-update add lightdm
 
 

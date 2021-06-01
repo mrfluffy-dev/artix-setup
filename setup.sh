@@ -5,7 +5,7 @@ echo Installing all the needed pacages from main artix/arch repo
 pacman -S \
 	xorg \
 	lightdm \
-	lightdm-openrc \
+#	lightdm-openrc \
 	lightdm-gtk-greeter \
 	lightdm-gtk-greeter-settings \
 	xmonad \
@@ -21,16 +21,16 @@ pacman -S \
 	arandr \
 	lxappearance \
 	qt5ct \
-	thunar \
-	thunar-archive-plugin \
-	thunar-volman \
+#	thunar \
+#	thunar-archive-plugin \
+#	thunar-volman \
 	xfce4-settings \
 	tumbler \
 	raw-thumbnailer \
 	gvfs \
 	gvfs-mtp \
 	networkmanager \
-	networkmanager-openrc \
+#	networkmanager-openrc \
 	network-manager-applet \
 	nextcloud-client \
 	polkit-gnome \
@@ -41,7 +41,17 @@ pacman -S \
 	base-devel \
 	noto-fonts-emoji \
 	neofetch \
-	neovim 
+	neovim \
+	pavucontrol \
+	anki \
+	mpv \
+	vlc \
+	virt-manager \
+	qemu \
+	pcmanfm \
+	atril \
+	ark \
+	qalculate-gtk
 echo "Pleas profide a username:"
 read -r name
 useradd -m "$name"
